@@ -57,7 +57,7 @@ How popular is this framework? What big companies are running on it? How is it "
 * [code repository](http://xyz.com)
 ### Operating Instructions   ///////**************************************/////
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
+* Endpoint: `/authorize`
+  * Returns a atoken
 * Endpoint: `/bing/zing/`
   * Returns a JSON object with xyz in it.

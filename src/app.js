@@ -18,7 +18,7 @@ app.use(express.static('./public'));
 
 // Routes
 app.get('/authorize', oauth, (req, res) => {
-  res.status(200).send(req.token);
+  res.status(200).json({token:req.token});
 });
 
 module.exports = {
