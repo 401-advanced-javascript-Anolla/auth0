@@ -1,7 +1,8 @@
 # OAuth Comparative Analysis
 ## OAuth Provider Name : Auth0
-### Research Conducted By: 
+### Research Conducted By:
 - Batool Al-Ali
+- Ahmad Kamal
 - Anolla Haddad
 - Yousef Al-Shen
 ### Overall Score and Comments
@@ -42,22 +43,15 @@ This research provide a full-stack applacation using a mock database. It for lea
 #### Systems Requirements 
 - .env with CLIENT_ID, PORT, DOMAIN and CLIENT_SECRET.
 - npm i base-64 bcryptjs cors debug dotenv express jsonwebtoken morgan superagent
-#### Ramp-Up Projections   ///////**************************************/////
-How long would/should it take a team of mid-junior developers to become productive?
-#### Community Support and Adoption levels ///////**************************************/////
-How popular is this framework? What big companies are running on it? How is it "seen" in the general JS community?  Is there an active community of developers supporting and growing it?
+
 ### Links and Resources
-* [framework](http://xyz.com)   ///////**************************************/////
-* [docs](http://xyz.com)        ///////**************************************/////
 * [GET/ Redirect uri](https://auth0.com/docs/universal-login)
 * [POST/ exchange an Authorization Code for a Token Token](https://auth0.com/docs/api/authentication#authorization-code-flow45)
 * [GET /User profile](https://auth0.com/docs/api/authentication#get-user-info)
-### Code Demos  ///////**************************************/////
-* [live/running application](http://xyz.com)
-* [code repository](http://xyz.com)
-### Operating Instructions   ///////**************************************/////
+### Code Demos
+* [live/running application](https://auth0-401.herokuapp.com/)
+* [code repository](https://github.com/401-advanced-javascript-Anolla/auth0/tree/yousef)
+### Operating Instructions
 * `npm start`
 * Endpoint: `/authorize`
-  * Returns a atoken
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+  * Returns a an JSON object with a token in it
