@@ -61,13 +61,13 @@ async function exchangeCodeForToken(code) {
 }
 
 async function getRemoteUserInfo(token) {
-
+  // console.log(token);
   let userResponse =
     await superagent.get('https://dev-rp3c39cs.eu.auth0.com/userinfo')
       .set('user-agent', 'express-app')
-      .set('Authorization', `token ${token}`)
-
-  let user = userResponse.body;
+      .set('Authorization', `Bearer ${token}`)
+      let user = userResponse.body;
+      // console.log('user res',user);
 
   return user;
 
