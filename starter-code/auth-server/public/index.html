@@ -14,20 +14,23 @@
 
   <script>
 
-    let URL = "https://github.com/login/oauth/authorize";
+    // let URL = "https://github.com/login/oauth/authorize";
 
-    let options = {
-      client_id: '35e8de24061ca19f4296',
-      redirect_uri: 'http://localhost:3000/oauth',
-      scope: 'read:user',
-      state: 'asldfjdfs'
-    }
+    // let options = {
+    //   client_id: '35e8de24061ca19f4296',
+    //   redirect_uri: 'http://localhost:3000/oauth',
+    //   scope: 'read:user',
+    //   state: 'asldfjdfs'
+    // }
 
-    let QueryString = Object.keys(options).map((key) => {
-      return `${key}=` + encodeURIComponent(options[key]);
-    }).join("&");
+    // let QueryString = Object.keys(options).map((key) => {
+    //   return `${key}=` + encodeURIComponent(options[key]);
+    // }).join("&");
 
-    let authURL = `${URL}?${QueryString}`;
+    let authURL = `https://dev-00f2wg4g.auth0.com/login?client=e2KHUhhNTFxKSmPffmW0YWnwgIG66ulf&protocol=oauth2&prompt=consent&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A4000%2Fauthorize%2F`;
+
+// `https://dev-00f2wg4g.auth0.com/login?client=MQGzhjNLyVXkQVviznGzrtJ3Qj41t3v6&protocol=oauth2&prompt=consent&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A4000%2Foauth%2FFconnection%3Dgoogle-oauth2&scope=openid%20profile`
+
 
     let link = document.getElementById('oauth');
     link.setAttribute('href', authURL);

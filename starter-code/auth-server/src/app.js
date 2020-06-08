@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 // Esoteric Resources
-const oauth = require('./github.js');
+const oauth = require('./auth0.js');
 
 // Prepare the express app
 const app = express();
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.static('./public'));
 
 // Routes
-app.get('/oauth', oauth, (req, res) => {
+app.get('/authorize', oauth, (req, res) => {
   res.status(200).send(req.token);
 });
 

@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const superagent = require('superagent');
 const users = require('./users.js');
 
@@ -8,11 +9,10 @@ const users = require('./users.js');
   https://developer.github.com/apps/building-oauth-apps/
 */
 
-const tokenServerUrl = process.env.TOKEN_SERVER;
-const remoteAPI = process.env.REMOTE_API;
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const API_SERVER = process.env.API_SERVER;
+const DOMAIN=process.env.DOMAIN;
+
 
 module.exports = async function authorize(req, res, next) {
 
@@ -39,11 +39,11 @@ module.exports = async function authorize(req, res, next) {
 async function exchangeCodeForToken(code) {
 
   let tokenResponse = await superagent.post(tokenServerUrl).send({
-    code: code,
+    grant_type: 'authorization_code',
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
-    redirect_uri: API_SERVER,
-    grant_type: 'authorization_code',
+    code: code,
+    redirect_uri: 'https://127.0.0.1:3000/authorize'
   })
 
   let access_token = tokenResponse.body.access_token;
@@ -55,9 +55,9 @@ async function exchangeCodeForToken(code) {
 async function getRemoteUserInfo(token) {
 
   let userResponse =
-    await superagent.get(remoteAPI)
-      .set('user-agent', 'express-app')
-      .set('Authorization', `token ${token}`)
+    await superagent.get('https://dev-rp3c39cs.eu.auth0.com/userinfo')
+      .set({'authorization': `Bearer ${token}`})
+      // {authorization: 'Bearer YOUR_MGMT_API_ACCESS_TOKEN'}
 
   let user = userResponse.body;
 

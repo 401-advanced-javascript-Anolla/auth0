@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "base-64": "^0.1.0",
-    "bcrypt": "^3.0.7",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
